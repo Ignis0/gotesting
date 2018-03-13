@@ -16,7 +16,7 @@ type Response struct {
 
 // A Pokemon Struct to map every pokemon to.
 type Pokemon struct {
-	EntryNo int            `json:"inc_no"`
+	EntryNo string	`json:"inc_no"`
 }
 
 
