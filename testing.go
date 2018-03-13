@@ -6,8 +6,12 @@ import (
 	"log"
 	"net/http"
 	"os"
-	// "encoding/json"
+	"encoding/json"
 )
+
+type Entry struct {
+	Incident	[]string	`json:="inc_no"`
+}
 
 func main() {
 	response, err := http.Get("https://data.raleighnc.gov/resource/3bhm-we7a.json")
@@ -21,5 +25,9 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	fmt.Println(string(responseData))
+	
+	var entryObject Entry
+	
+	json.Unmarshal(responseData, &entryObject)
+	fmt.Println(entryObject.Incident[0])
 }
