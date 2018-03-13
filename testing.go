@@ -10,7 +10,7 @@ import (
 )
 
 type Entry struct {
-	Incident	string	`json:="inc_no"`
+	Incident	[]string	`json:="inc_no"`
 }
 
 func main() {
@@ -29,5 +29,6 @@ func main() {
 	var entryObject Entry
 	
 	json.Unmarshal(responseData, &entryObject)
-	fmt.Println(entryObject.Incident[0])
+	fmt.Println(entryObject.Incident[])
+	fmt.Println(newline)
 }
