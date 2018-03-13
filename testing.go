@@ -8,16 +8,16 @@ import (
 	"encoding/json"
 )
 
-type PoliceAPI []struct {
-	District    string `json:"district,omitempty"`
+type PoliceAPI struct {
+	District    string `json:"district"`
 	IncDatetime string `json:"inc_datetime"`
 	IncNo       string `json:"inc_no"`
 	Lcr         string `json:"lcr"`
 	LcrDesc     string `json:"lcr_desc"`
 	Location    struct {
 		Type        string    `json:"type"`
-		Coordinates []float64 `json:"coordinates"`
-	} `json:"location,omitempty"`
+		Coordinates float64 `json:"coordinates"`
+	} `json:"location"`
 }
 
 func main() {
@@ -45,6 +45,6 @@ func main() {
 		log.Println(err)
 	}
 	
-	fmt.Println(PoliceAPI)
+	fmt.Println(PoliceAPI.District)
 	
 }
