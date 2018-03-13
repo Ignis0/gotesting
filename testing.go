@@ -15,7 +15,7 @@ type Response struct {
 
 // A Pokemon Struct to map every pokemon to.
 type Pokemon struct {
-	EntryNo string	`json:"lcr"`
+	EntryNo string	`json:"inc_no"`
 }
 
 
@@ -39,6 +39,6 @@ func main() {
 	//fmt.Println(len(responseObject.Pokemon))
 
 	for i := 0; i < len(responseObject.Pokemon); i++ {
-		fmt.Println(responseObject.Pokemon[i].EntryNo)
+		fmt.Println(responseObject.Pokemon[i])
 	}
 }
