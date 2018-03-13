@@ -21,5 +21,5 @@ func main() {
 		log.Fatal(err)
 	}
 
-	fmt.Println(responseData)
+	fmt.Println(string(responseData))
 }
