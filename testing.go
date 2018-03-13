@@ -10,7 +10,7 @@ import (
 )
 
 type Entry struct {
-	Incident	[]string	`json:="inc_no"`
+	Incident	string	`json:="inc_no"`
 }
 
 func main() {
