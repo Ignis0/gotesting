@@ -16,7 +16,7 @@ type Response struct {
 
 // A Pokemon Struct to map every pokemon to.
 type Pokemon struct {
-	EntryNo int            `json:"entry_number"`
+	EntryNo int            `json:"inc_no"`
 	Species PokemonSpecies `json:"pokemon_species"`
 }
 
@@ -26,7 +26,7 @@ type PokemonSpecies struct {
 }
 
 func main() {
-	response, err := http.Get("http://pokeapi.co/api/v2/pokedex/kanto/")
+	response, err := http.Get("https://data.raleighnc.gov/resource/3bhm-we7a.json")
 	if err != nil {
 		fmt.Print(err.Error())
 		os.Exit(1)
