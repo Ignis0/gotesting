@@ -21,11 +21,24 @@ type PoliceAPI []struct {
 }
 
 func main() {
-	response, err := http.Get("https://data.raleighnc.gov/resource/3bhm-we7a.json")
+	
+	url := "https://data.raleighnc.gov/resource/3bhm-we7a.json"
+
+	req, err := http.NewRequest("GET", url, nil)
 	if err != nil {
-		fmt.Print(err.Error())
-		os.Exit(1)
+		log.Fatal("NewRequest: ", err)
+		return
 	}
+
+	client := &http.Client{}
+
+	response, err := client.Do(req)
+	if err != nil {
+		log.Fatal("Do: ", err)
+		return
+	}
+
+	defer response.Body.Close()
 	
 	var record PoliceAPI
 	if err := json.NewDecoder(response.Body).Decode(&record); err != nil {
