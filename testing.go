@@ -30,15 +30,14 @@ func main() {
 		log.Fatal(err)
 	}
 	
-	fmt.Println(responseData)
+	fmt.Println(string(responseData))
 	
 	var responseObject Response
 	json.Unmarshal(responseData, &responseObject)
 	
-	fmt.Println(string(responseObject))
-	
 	for i := 0; i < len(responseObject.Pokemon); i++ {
 		fmt.Println(responseObject.Pokemon[i].EntryNo)
 	}
+	fmt.Println("done")
 	
 }
