@@ -52,7 +52,7 @@ func main() {
 	fmt.Println(responseData)
 
 	var responseObject Response
-	json.Unmarshal(responseData, &responseObject)
+	json.Unmarshal(responseData, responseObject)
 
 	fmt.Println(len(responseObject.Pokemon))
 }
