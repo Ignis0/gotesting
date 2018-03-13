@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"encoding/json"
 	"io/ioutil"
 	"log"
 	"net/http"
@@ -9,7 +10,7 @@ import (
 )
 
 func main() {
-	response, err := http.Get("https://data.raleighnc.gov/api/views/guyh-emm5/rows.json?accessType=DOWNLOAD")
+	response, err := http.Get("https://data.raleighnc.gov/resource/3bhm-we7a.json")
 	
 	if err != nil {
 		fmt.Print(err.Error())
