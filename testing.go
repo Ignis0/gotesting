@@ -45,6 +45,6 @@ func main() {
 		log.Println(err)
 	}
 	
-	fmt.Println(PoliceAPI.District)
+	fmt.Println(PoliceAPI)
 	
 }
