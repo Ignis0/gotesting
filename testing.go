@@ -9,7 +9,7 @@ import (
 )
 
 func main() {
-	response, err := http.Get("http://pokeapi.co/api/v2/pokedex/kanto/")
+	response, err := http.Get("https://data.raleighnc.gov/Police/Daily-Police-Incidents/guyh-emm5/data")
 	
 	if err != nil {
 		fmt.Print(err.Error())
