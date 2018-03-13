@@ -29,6 +29,8 @@ func main() {
 	
 	fmt.Println(string(responseData))
 	
+	string(responseData)
+	
 	var responseObject Response
 	json.Unmarshal(responseData, &responseObject)
 	
