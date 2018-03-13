@@ -30,5 +30,4 @@ func main() {
 	
 	json.Unmarshal(responseData, &entryObject)
 	fmt.Println(entryObject.Incident[0])
-	fmt.Println("/n")
 }
