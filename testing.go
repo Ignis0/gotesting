@@ -36,9 +36,9 @@ func main() {
 	var responseObject Response
 	json.Unmarshal(responseData, &responseObject)
 	
-	//fmt.Println(len(responseObject.Pokemon))
+	fmt.Println(len(responseObject.Pokemon))
 
-	for i := 0; i < len(responseObject.Pokemon); i++ {
-		fmt.Println(responseObject.Pokemon[i])
-	}
+	//for i := 0; i < len(responseObject.Pokemon); i++ {
+	//	fmt.Println(responseObject.Pokemon[i])
+	//}
 }
