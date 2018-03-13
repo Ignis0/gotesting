@@ -9,12 +9,6 @@ import (
 	"encoding/json"
 )
 
-type Response struct {
-	Pokemon []string `json:"inc_no"`
-}
-
-
-
 func main() {
 	response, err := http.Get("https://data.raleighnc.gov/resource/3bhm-we7a.json")
 	if err != nil {
@@ -29,13 +23,10 @@ func main() {
 	
 	fmt.Println(string(responseData))
 
-	responseObject Response
-	json.Unmarshal(responseData, &responseObject)
+	entry []string `json: "inc_no"`
 	
-	fmt.Println(responseObject)
-	
-	for i := 0; i < len(responseObject.Pokemon); i++ {
-		fmt.Println(responseObject.Pokemon[i])
+	for i := 0; i < len(entry); i++ {
+		fmt.Println(entry[i])
 	}
 	fmt.Println("done")
 	
