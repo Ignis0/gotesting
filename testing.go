@@ -17,13 +17,8 @@ type Response struct {
 // A Pokemon Struct to map every pokemon to.
 type Pokemon struct {
 	EntryNo int            `json:"inc_no"`
-	Species PokemonSpecies `json:"pokemon_species"`
 }
 
-// A struct to map our Pokemon's Species which includes it's name
-type PokemonSpecies struct {
-	Name string `json:"name"`
-}
 
 func main() {
 	response, err := http.Get("https://data.raleighnc.gov/resource/3bhm-we7a.json")
@@ -44,6 +39,6 @@ func main() {
 	fmt.Println(len(responseObject.Pokemon))
 
 	for i := 0; i < len(responseObject.Pokemon); i++ {
-		fmt.Println(responseObject.Pokemon[i].Species.Name)
+		fmt.Println(responseObject.Pokemon[i].EntryNo)
 	}
 }
