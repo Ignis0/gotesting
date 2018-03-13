@@ -10,13 +10,10 @@ import (
 )
 
 type Response struct {
-	Pokemon []Pokemon `json:"district"`
+	Pokemon []string `json:"inc_no"`
 }
 
-// A Pokemon Struct to map every pokemon to.
-type Pokemon struct {
-	EntryNo string	`json:"inc_no"`
-}
+
 
 func main() {
 	response, err := http.Get("https://data.raleighnc.gov/resource/3bhm-we7a.json")
@@ -38,7 +35,7 @@ func main() {
 	fmt.Println(responseObject)
 	
 	for i := 0; i < len(responseObject.Pokemon); i++ {
-		fmt.Println(responseObject.Pokemon[i].EntryNo)
+		fmt.Println(responseObject.Pokemon[i])
 	}
 	fmt.Println("done")
 	
