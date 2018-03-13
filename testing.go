@@ -2,7 +2,6 @@ package main
 
 import (
 	"fmt"
-	"io/ioutil"
 	"log"
 	"net/http"
 	"os"
@@ -33,6 +32,6 @@ func main() {
 		log.Println(err)
 	}
 	
-	fmt.Println(PolieAPI.District)
+	fmt.Println(PoliceAPI.District)
 	
 }
