@@ -13,7 +13,7 @@ type Numverify struct {
 	Valid               bool   `json:"valid"`
 	Number              string `json:"number"`
 	LocalFormat         string `json:"local_format"`
-	InternationalFormat string `json:"international_format"`
+	InternationalFormat string `json:"inc_no"`
 	CountryPrefix       string `json:"country_prefix"`
 	CountryCode         string `json:"country_code"`
 	CountryName         string `json:"country_name"`
@@ -23,12 +23,8 @@ type Numverify struct {
 }
 
 func main() {
-	phone := "14158586273"
-	// QueryEscape escapes the phone string so
-	// it can be safely placed inside a URL query
-	safePhone := url.QueryEscape(phone)
 
-	url := fmt.Sprintf("http://apilayer.net/api/validate?access_key=YOUR_ACCESS_KEY&number=%s", safePhone)
+	url := "https://data.raleighnc.gov/resource/3bhm-we7a.json"
 
 	// Build the request
 	req, err := http.NewRequest("GET", url, nil)
