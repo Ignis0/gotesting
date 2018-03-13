@@ -45,8 +45,8 @@ func main() {
 			    responseObject[i].IncDatetime, " ",
 			    responseObject[i].IncNo, " ",
 			    responseObject[i].Lcr, " ",
-			    responseObject[i].LcrDesc, " "
-			    responseObject[i].Location.Type, " "
+			    responseObject[i].LcrDesc, " ",
+			    responseObject[i].Location.Type, " ",
 			    responseObject[i].Location.Coordinates)
 	}
 
