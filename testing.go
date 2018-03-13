@@ -15,7 +15,7 @@ type Entry struct {
 
 func main() {
 	response, err := http.Get("https://data.raleighnc.gov/resource/3bhm-we7a.json")
-	
+	i int := 0
 	if err != nil {
 		fmt.Print(err.Error())
 		os.Exit(1)
@@ -29,6 +29,6 @@ func main() {
 	var entryObject Entry
 	
 	json.Unmarshal(responseData, &entryObject)
-	fmt.Println(entryObject.Incident[])
+	fmt.Println(entryObject.Incident[i])
 	fmt.Println(newline)
 }
