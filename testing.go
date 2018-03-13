@@ -41,4 +41,16 @@ func main() {
 
 	fmt.Println(len(responseObject))
 	fmt.Println(responseObject[1].District)
+	
+	for i := 0; i < len(responseObject); i++ {
+		fmt.Println(responseObject[i].District)
+		fmt.Println(responseObject[i].IncDatetime)
+		fmt.Println(responseObject[i].IncNo)
+		fmt.Println(responseObject[i].Lcr)
+		fmt.Println(responseObject[i].LcrDesc)
+		fmt.Println(responseObject[i].Location.Type)
+		fmt.Println(responseObject[i].Location.Coordinates)
+		fmt.Println("\n")
+	}
+
 }
