@@ -15,7 +15,7 @@ type Entry struct {
 
 func main() {
 	response, err := http.Get("https://data.raleighnc.gov/resource/3bhm-we7a.json")
-	i int := 0
+	i := 0
 	if err != nil {
 		fmt.Print(err.Error())
 		os.Exit(1)
