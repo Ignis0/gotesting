@@ -9,7 +9,7 @@ import (
 )
 
 func main() {
-	response, err := http.Get("https://data.raleighnc.gov/Police/Daily-Police-Incidents/guyh-emm5/data")
+	response, err := http.Get("https://data.raleighnc.gov/api/views/guyh-emm5/rows.json?accessType=DOWNLOAD")
 	
 	if err != nil {
 		fmt.Print(err.Error())
