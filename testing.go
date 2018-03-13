@@ -28,10 +28,8 @@ func main() {
 	}
 	
 	fmt.Println(string(responseData))
-	
-	string(responseData)
-	
-	var responseObject Response
+
+	responseObject Response
 	json.Unmarshal(responseData, &responseObject)
 	
 	fmt.Println(responseObject)
