@@ -6,8 +6,17 @@ import (
 	"log"
 	"net/http"
 	"os"
-	//"encoding/json"
+	"encoding/json"
 )
+
+type Response struct {
+	Pokemon []Pokemon 
+}
+
+// A Pokemon Struct to map every pokemon to.
+type Pokemon struct {
+	EntryNo string	`json:"inc_no"`
+}
 
 func main() {
 	response, err := http.Get("https://data.raleighnc.gov/resource/3bhm-we7a.json")
@@ -21,5 +30,11 @@ func main() {
 		log.Fatal(err)
 	}
 
-	fmt.Println(string(responseData))
+	var responseObject Response
+	json.Unmarshal(responseData, &responseObject)
+	
+	for i := 0; i < len(responseObject.Pokemon); i++ {
+		fmt.Println(responseObject.Pokemon[i].EntryNo)
+	}
+	
 }
