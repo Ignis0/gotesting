@@ -10,7 +10,7 @@ import (
 )
 
 type Response struct {
-	Pokemon []Pokemon 
+	Pokemon []Pokemon `json:"district"`
 }
 
 // A Pokemon Struct to map every pokemon to.
