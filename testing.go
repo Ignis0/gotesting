@@ -38,7 +38,6 @@ func main() {
 	json.Unmarshal(responseData, &responseObject)
 
 	fmt.Println(len(responseObject))
-	fmt.Println(responseObject[1].District)
 	
 	for i := 0; i < len(responseObject); i++ {
 		fmt.Println(responseObject[i].District, " ",
